@@ -1,0 +1,78 @@
+@use './utilities.scss' as *;
+
+#main-menu {
+  list-style: none;
+
+  li {
+    font-size: $font-size-3;
+    font-weight: bold;
+    transition: .3s;
+
+    label {
+      cursor: pointer;
+    }
+
+    label:has(input[type='radio']:checked) {
+      color: green;
+    }
+
+    &:hover {
+      scale: 1.1;
+      rotate: -3deg;
+      color: white;
+    }
+  }
+}
+
+#home-page-content {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+
+  .content {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: $font-size-3;
+    transform: translateX(100%);
+  }
+
+  .leave {
+    animation: .5s leave-content ease-in;
+  }
+
+  .active {
+    animation: .5s active-content ease-out;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes active-content {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes leave-content {
+  from {
+    transform: translateX(0);
+  }
+
+  30% {
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}

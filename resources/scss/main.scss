@@ -1,0 +1,43 @@
+@use './utilities.scss' as *;
+@use './search.scss';
+@use './home.scss';
+@import url('https://fonts.googleapis.com/css2?family=Fasthand&family=Oswald&display=swap');
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+html {
+  // font-family: 'Fasthand', cursive;
+  font-family: 'Oswald', sans-serif;
+}
+
+body {
+  background-color: $dark-blue;
+  color: $light-grey;
+  height: 100dvh;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 100%;
+}
+
+.side {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+  display: none;
+}

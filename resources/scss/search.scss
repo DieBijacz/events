@@ -1,0 +1,93 @@
+@use './utilities.scss' as *;
+
+#search {
+  position: relative;
+  height: 100%;
+  width: 100%;
+
+  .field {
+    position: absolute;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    label {
+      position: relative;
+      font-size: $font-size-5;
+      font-weight: bold;
+
+      .swtich {
+        position: absolute;
+        bottom: -1rem;
+        left: 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        font-size: $font-size-2;
+        color: grey;
+      }
+
+      &:has(input[type='checkbox']:not(:checked)) .swtich>:nth-child(1) {
+        color: $selection-color-1;
+        transition: $short-transition;
+      }
+
+      &:has(input[type='checkbox']:checked) .swtich>:nth-child(2) {
+        transition: $short-transition;
+        color: $selection-color-1;
+      }
+    }
+
+    .toggle-section {
+      overflow: hidden;
+      transition: $short-transition;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    .toggle-section {
+      width: 400px;
+      height: 0;
+      color: grey;
+      opacity: 0;
+    }
+
+    .toggle-section.show {
+      height: 200px;
+      color: green;
+      opacity: 1;
+    }
+
+    &:nth-child(1) {
+      // border: 1px solid blue;
+      top: 2%;
+      left: 2%;
+      rotate: -10deg;
+    }
+
+    &:nth-child(2) {
+      // border: 1px solid green;
+      top: 25%;
+      right: 10%;
+      rotate: 10deg;
+    }
+
+    &:nth-child(3) {
+      // border: 1px solid yellow;
+      top: 50%;
+      left: 20%;
+      rotate: -2deg;
+    }
+  }
+
+  button {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+  }
+}
