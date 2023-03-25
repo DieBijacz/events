@@ -1,5 +1,11 @@
+import { initializeCalendar } from "./calendar";
+
+jQuery(document).ready(function () {
+  initializeCalendar()
+})
+
 // MAIN MENU TOGGLE
-$('input[type="radio"]').on('change', function () {
+$('.menu-radio-btn').on('change', function () {
   $('.active').removeClass('active').addClass('leave');
   if ($(this).is(':checked')) {
     var inputVal = $(this).val();

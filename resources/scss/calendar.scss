@@ -1,0 +1,80 @@
+@use './utilities.scss' as *;
+
+#calendar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  gap: .5rem;
+
+  .date-format-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .25rem;
+
+    .day {
+      font-size: $font-size-3;
+      font-weight: bold;
+    }
+
+    div:nth-child(2) {
+      font-size: $font-size-1;
+      line-height: 1.5rem;
+    }
+  }
+
+  #calendar-controls {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+
+    i {
+      font-size: 1.5rem;
+      padding: 1rem;
+      transition: $short-transition;
+
+      &:hover {
+        color: $selection-color-1;
+        scale: 1.1;
+      }
+    }
+  }
+
+  #calendar-weeks,
+  #calendar-days {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+  }
+
+  #calendar-days {
+    li {
+      overflow: hidden;
+      background-color: transparent;
+
+      label {
+        aspect-ratio: 1/1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: .3s;
+      }
+
+      &:not(.empty):hover {
+        cursor: pointer;
+        background-color: rgba($color: $selection-color-1, $alpha: .5);
+      }
+
+      &:has(input:checked) {
+        background-color: $selection-color-1;
+      }
+
+      &.weekend {
+        background-color: rgba($color: $selection-color-1, $alpha: .1);
+      }
+    }
+  }
+}

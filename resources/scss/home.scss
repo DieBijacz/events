@@ -4,8 +4,9 @@
   list-style: none;
 
   li {
-    font-size: $font-size-3;
+    font-size: $font-size-6;
     font-weight: bold;
+    // text-transform: uppercase;
     transition: .3s;
 
     label {
