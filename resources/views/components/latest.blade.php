@@ -1,8 +1,33 @@
 @props(['events'])
 
 <div id="latest">
-  <div>event</div>
-  <div>event</div>
-  <div>event</div>
-  <div>event</div>
+  <div class="carousel-container">
+    <div class="carousel">
+      <div class="carousel-cell">element</div>
+      <div class="carousel-cell">element</div>
+      <div class="carousel-cell">element</div>
+      <div class="carousel-cell">element</div>
+      <div class="carousel-cell">element</div>
+      <div class="carousel-cell">element</div>
+      <div class="carousel-cell">element</div>
+      <div class="carousel-cell">element</div>
+      <div class="carousel-cell">element</div>
+      <div class="carousel-cell">element</div>
+      <div class="carousel-cell">element</div>
+      <div class="carousel-cell">element</div>
+      <div class="carousel-cell">element</div>
+      <div class="carousel-cell">element</div>
+      <div class="carousel-cell">element</div>
+      <div class="carousel-cell">element</div>
+      <div class="carousel-cell">element</div>
+      <div class="carousel-cell">element</div>
+      <div class="carousel-cell">element</div>
+      <div class="carousel-cell">element</div>
+      <div class="carousel-cell">element</div>
+      <div class="carousel-cell">element</div>
+      <div class="carousel-cell">element</div>
+      <div class="carousel-cell">element</div>
+      <div class="carousel-cell">element</div>
+    </div>
+  </div>
 </div>

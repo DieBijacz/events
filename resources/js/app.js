@@ -1,3 +1,3 @@
 import './bootstrap';
-import './main';
+import './utilities';
 import './calendar';

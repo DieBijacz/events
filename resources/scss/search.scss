@@ -8,11 +8,17 @@
   .field {
     position: absolute;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     font-size: $font-size-5;
-    width: 400px;
+    width: 20vw;
+    height: 60vh;
+    transition: $short-transition;
+
+    &:hover {
+      color: rgb(255, 255, 255);
+    }
 
     label {
       position: relative;
@@ -65,7 +71,8 @@
 
         li {
           background-color: rgba(255, 255, 255, 0.05);
-          padding: .25rem 1rem;
+          padding: 0 .5rem;
+          text-align: center;
         }
       }
     }
@@ -109,32 +116,35 @@
 
     &:nth-child(1) {
       top: 0%;
-      left: 0%;
-      // rotate: -10deg;
+      left: 10%;
+      rotate: -10deg;
     }
 
     &:nth-child(2) {
       top: 25%;
       right: 5%;
-      // rotate: 10deg;
+      rotate: 10deg;
     }
 
     &:nth-child(3) {
-      top: 40%;
+      top: 45%;
       left: 2%;
-      // rotate: -2deg;
+      rotate: -2deg;
     }
   }
 
   #search-button {
     position: absolute;
-    bottom: 5%;
-    left: 50%;
-    font-size: $font-size-25;
+    top: 80%;
+    left: 30%;
+    rotate: -8deg;
+    font-size: $font-size-3;
     font-weight: bold;
+    letter-spacing: -3px;
+    color: $selection-color-1;
 
     &:hover {
-      color: $selection-color-1;
+      scale: 1.5;
     }
   }
 }

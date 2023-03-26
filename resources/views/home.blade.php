@@ -10,31 +10,34 @@
     integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>events</title>
-  @vite(['resources/scss/main.scss', 'resources/js/app.js'])
+  @vite(['resources/scss/app.scss', 'resources/js/app.js'])
 </head>
 
 <body>
-  <div class="grid-2">
+  <nav>
+    <a href="/" class="logo">evente</a>
+  </nav>
+  <div class="flex-2">
     <div class="side">
       <ul id="main-menu">
         <li>
-          <label for="latest">latest
-            <input type="radio" class="menu-radio-btn" id="latest" name="menu-checkbox" value="latest">
+          <label for="latest-input">latest
+            <input type="radio" class="menu-radio-btn" id="latest-input" name="menu-checkbox" value="latest">
           </label>
         </li>
         <li>
-          <label for="search">search
-            <input type="radio" class="menu-radio-btn" id="search" name="menu-checkbox" value="search">
+          <label for="search-input">search
+            <input type="radio" class="menu-radio-btn" id="search-input" name="menu-checkbox" value="search">
           </label>
         </li>
         <li>
-          <label for="explore">explore
-            <input type="radio" class="menu-radio-btn" id="explore" name="menu-checkbox" value="explore">
+          <label for="explore-input">explore
+            <input type="radio" class="menu-radio-btn" id="explore-input" name="menu-checkbox" value="explore">
           </label>
         </li>
         <li>
-          <label for="create">create
-            <input type="radio" class="menu-radio-btn" id="create" name="menu-checkbox" value="create">
+          <label for="create-input">create
+            <input type="radio" class="menu-radio-btn" id="create-input" name="menu-checkbox" value="create">
           </label>
         </li>
       </ul>

@@ -6,15 +6,16 @@
   li {
     font-size: $font-size-6;
     font-weight: bold;
-    // text-transform: uppercase;
     transition: .3s;
 
     label {
       cursor: pointer;
     }
 
-    label:has(input[type='radio']:checked) {
-      color: green;
+    &:has(input[type='radio']:checked) {
+      color: $selection-color-1;
+      rotate: -5deg;
+      scale: 1.5;
     }
 
     &:hover {
@@ -40,40 +41,5 @@
     align-items: center;
     font-size: $font-size-3;
     transform: translateX(100%);
-  }
-
-  .leave {
-    animation: .5s leave-content ease-in;
-  }
-
-  .active {
-    animation: .5s active-content ease-out;
-    animation-fill-mode: forwards;
-  }
-}
-
-@keyframes active-content {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-
-  to {
-    transform: translateX(0);
-  }
-}
-
-@keyframes leave-content {
-  from {
-    transform: translateX(0);
-  }
-
-  30% {
-    opacity: 0;
-  }
-
-  to {
-    transform: translateX(-100%);
-    opacity: 0;
   }
 }

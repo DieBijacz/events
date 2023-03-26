@@ -1,5 +1,4 @@
 <div id="search">
-
   <div class="field">
     <label for="what">What?
       <div class="swtich">

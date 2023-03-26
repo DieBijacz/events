@@ -21,7 +21,7 @@ export function initializeCalendar() {
 
 function generateCalendar(month, year) {
   const currentDate = new Date();
-  const firstDayOfMonth = new Date(year, month, 1);
+  const firstDayOfMonth = new Date(year, month, 0);
   const daysInMonth = new Date(year, month + 1, 0).getDate();
   const $calendarDays = $('#calendar-days').empty();
 
