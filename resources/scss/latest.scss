@@ -16,7 +16,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: rotateZ(70deg) translateY(100px);
+  transform: rotateZ(75deg) translateY(100px);
   transition: $short-transition;
 
   .carousel {
@@ -33,7 +33,9 @@
       height: 140px;
       border-radius: 5px;
       transition: $mid-transition;
+      background-color: rgba($color: #fff, $alpha: .02);
       cursor: pointer;
+      font-size: $font-size-2;
       transform: rotateY(0deg) translateZ(0px) rotateZ(-90deg);
 
       &:hover {

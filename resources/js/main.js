@@ -1,11 +1,12 @@
 import { initializeCalendar } from "./calendar";
-import { carousel } from "./carousel";
+import { BuildCarousel } from "./carousel";
 
 jQuery(document).ready(function () {
-  checkLatest()
+  // checkLatest()
+  checkCreate()
   checkSearchToggels()
   initializeCalendar()
-  carousel()
+  BuildCarousel()
 })
 
 // MAIN MENU TOGGLE
@@ -13,18 +14,25 @@ $('.menu-radio-btn').on('change', function () {
   $('.content.active').removeClass('active').addClass('leave');
   if ($(this).is(':checked')) {
     var inputVal = $(this).val();
-    $('.content[data-content="' + inputVal + '"]').addClass('active');
+    $('.content[data-content="' + inputVal + '"]').addClass('active').removeClass('leave');
   }
 });
 
 // ON LOAD ANIMATE MENU AND CHECK LATEST
 function checkLatest() {
   $('#latest-input').prop('checked', true);
-  $('.content[data-content="latest"]').addClass('active');
   $('#main-menu').addClass('active');
+  $('.content[data-content="latest"]').addClass('active');
+}
+
+function checkCreate() {
+  $('#create-input').prop('checked', true);
+  $('#main-menu').addClass('active');
+  $('.content[data-content="create"]').addClass('active');
 }
 
 // OPENS MORE OPTIONS ON MENU SEARCH TAB
+// in search menu tabs will be opened
 function checkSearchToggels() {
   $('.checkbox-toggle').prop('checked', true);
   $('.toggle-section').addClass('show');
@@ -50,4 +58,9 @@ export function callFunctionXTimes(fn, x, delay) {
       clearInterval(intervalId)
     }
   }, delay)
+}
+
+// CHANGES LAYOUT PROPOTIONS LIKE 1:5 WHERE size = 5
+export function changeLayoutFlexProportion(size) {
+  $('#layout').removeClass().addClass(`flex-${size}`)
 }

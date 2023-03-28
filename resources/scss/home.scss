@@ -2,6 +2,15 @@
 
 #main-menu {
   list-style: none;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: $font-size-3;
+  transform: translateX(100%);
 
   li {
     font-size: $font-size-6;
@@ -26,7 +35,7 @@
   }
 }
 
-#home-page-content {
+.home-page-content {
   position: relative;
   height: 100%;
   width: 100%;

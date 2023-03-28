@@ -3,31 +3,9 @@
 <div id="latest">
   <div class="carousel-container">
     <div class="carousel">
-      <div class="carousel-cell">element</div>
-      <div class="carousel-cell">element</div>
-      <div class="carousel-cell">element</div>
-      <div class="carousel-cell">element</div>
-      <div class="carousel-cell">element</div>
-      <div class="carousel-cell">element</div>
-      <div class="carousel-cell">element</div>
-      <div class="carousel-cell">element</div>
-      <div class="carousel-cell">element</div>
-      <div class="carousel-cell">element</div>
-      <div class="carousel-cell">element</div>
-      <div class="carousel-cell">element</div>
-      <div class="carousel-cell">element</div>
-      <div class="carousel-cell">element</div>
-      <div class="carousel-cell">element</div>
-      <div class="carousel-cell">element</div>
-      <div class="carousel-cell">element</div>
-      <div class="carousel-cell">element</div>
-      <div class="carousel-cell">element</div>
-      <div class="carousel-cell">element</div>
-      <div class="carousel-cell">element</div>
-      <div class="carousel-cell">element</div>
-      <div class="carousel-cell">element</div>
-      <div class="carousel-cell">element</div>
-      <div class="carousel-cell">element</div>
+      @foreach ($events as $event)
+      <a href="/event/{{$event->id}}" class="carousel-cell" data-value='1'>{{$event->location}}</a>
+      @endforeach
     </div>
   </div>
 </div>

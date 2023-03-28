@@ -1,43 +1,34 @@
-import { callFunctionXTimes } from './utilities.js'
+import { callFunctionXTimes } from './main.js'
+
+const cells = document.querySelectorAll('.carousel-cell')
+const carousel = document.querySelector('.carousel')
 
 const DELEY_TRANSFORM_ALL_CELLS = 300
 const DELEY_TRANSFORM_EACH_CELL = 100
-const SPIN_SPEED = 200
+const SCROLL_ROTATE_SPEED = 3
 
-export function carousel() {
-  const cells = document.querySelectorAll('.carousel-cell')
-  const carousel = document.querySelector('.carousel')
-  const carouselContainer = document.querySelector('.carousel-container')
-  let rotateValue = 0
+let rotateValue = 0
 
+export function BuildCarousel() {
+  buildCarouselCells()
   animateEnterCarousel()
-
-  function animateEnterCarousel() {
-    carousel.style.animation = `spin 5s cubic-bezier(1, -0.01, .64, 1) forwards`
-    carousel.addEventListener('animationend', () => {
-      carousel.style.animation = ''
-      carousel.addEventListener('mouseenter', handleMouseEnter)
-    }, { once: true })
-  }
-
-  function handleMouseEnter() {
-    carousel.addEventListener('wheel', scrollCarousel)
-  }
-
-  function handleMouseLeave() {
-    carousel.removeEventListener('wheel', scrollCarousel)
-  }
-
-  function scrollCarousel(e) {
-    const delta = e.deltaY > 0 ? 1 : -1;
-    delta > 0 ? rotateValue = rotateValue + 2 : rotateValue -= 2
-    carousel.style.transform = `rotateY(${rotateValue}deg)`
-  }
-
-  buildCarouselCells(cells)
 }
 
-function buildCarouselCells(cells) {
+function animateEnterCarousel() {
+  carousel.style.animation = `spin 5s cubic-bezier(1, -0.01, .64, 1) forwards`
+  carousel.addEventListener('animationend', () => {
+    carousel.style.animation = ''
+    carousel.addEventListener('wheel', scrollCarousel)
+  }, { once: true })
+}
+
+function scrollCarousel(e) {
+  const delta = e.deltaY > 0 ? 1 : -1;
+  delta > 0 ? rotateValue = rotateValue + SCROLL_ROTATE_SPEED : rotateValue -= SCROLL_ROTATE_SPEED
+  carousel.style.transform = `rotateY(${rotateValue}deg)`
+}
+
+function buildCarouselCells() {
   const CELLS_COUNT = cells.length
   const CELL_SIZE = 150
   const CELL_ANGLE = 360 / CELLS_COUNT

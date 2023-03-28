@@ -1,5 +1,4 @@
 // Export calendar function
-// Set up calendar and navigation
 export function initializeCalendar() {
   const currentDate = new Date();
   let selectedDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate());

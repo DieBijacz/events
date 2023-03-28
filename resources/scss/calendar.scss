@@ -9,23 +9,6 @@
   font-size: 1rem;
   gap: .5rem;
 
-  .date-format-1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: .25rem;
-
-    .day {
-      font-size: $font-size-3;
-      font-weight: bold;
-    }
-
-    div:nth-child(2) {
-      font-size: $font-size-1;
-      line-height: 1.5rem;
-    }
-  }
-
   #calendar-controls {
     display: flex;
     justify-content: space-around;
